@@ -14,7 +14,9 @@ userInfo[0] = 1;
 console.log(userInfo[0]);
 console.log(userInfo);
 
-console.log('-------------------------------');
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);
 
 // 2. Write a TypeScript function that takes in two arrays of numbers as parameters. The function should compare the elements in both arrays and return a new array that contains only the elements that are present in both arrays.
 
@@ -37,7 +39,9 @@ console.log('array 1 is..', arr1);
 console.log('array 2 is..', arr2);
 console.log('array 3 is..', arr3);
 
-console.log('-------------------------------');
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);
 
 // 3. You have an interface for Product, containing the product's id, name, price, and category. You want to filter an array of Products based on a specific criterion and value.
 
@@ -79,7 +83,10 @@ const filteredProductByCategory = getProductData(
 console.log('products by price....', filteredProductByPrice);
 console.log('products by name....', filteredProductByName);
 console.log('products by category....', filteredProductByCategory);
-console.log('-------------------------------');
+
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);
 
 // 4. Suppose you have an array of tuples, where each tuple represents a product and contains the product name, price, and quantity. Write a TypeScript function that calculates the total cost of all the products in the array, using a generic type for the tuple and a type alias for the array.
 
@@ -108,4 +115,25 @@ const productDetails2: Product2[] = [
 const totalCalc = getProductDetails(productDetails2);
 
 console.log('total calculation..', totalCalc);
-console.log('-------------------------------');
+
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);
+
+// 5. Suppose you have an array of numbers in TypeScript, and you want to find the sum of all the even numbers in the array. How would you approach this problem and write code to solve it?
+
+function calculatesSum(arr: number[]): number {
+  const newArr = arr.filter((x) => x % 2 === 0);
+
+  const result = newArr.reduce((sum, x) => sum + x, 0);
+
+  return result;
+}
+
+const numbersOfArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const totalSum = calculatesSum(numbersOfArray);
+console.log('Sum of even numbers is..', totalSum);
+
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);

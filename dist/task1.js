@@ -8,7 +8,7 @@ function filterdArray(r, o) {
 }
 
 console.log(userInfo), userInfo[0] = 1, console.log(userInfo[0]), console.log(userInfo), 
-console.log("-------------------------------");
+console.log("------------------------------------------------------------------------------------------------------------");
 
 const arr1 = [ 1, 2, 3, 33, 45, 465, 700 ], arr2 = [ 3, 946, 63, 9896, 700 ], arr3 = filterdArray(arr1, arr2);
 
@@ -17,7 +17,7 @@ function getProductData(r, o, t) {
 }
 
 console.log("array 1 is..", arr1), console.log("array 2 is..", arr2), console.log("array 3 is..", arr3), 
-console.log("-------------------------------");
+console.log("------------------------------------------------------------------------------------------------------------");
 
 const productsData = [ {
     id: 1,
@@ -66,8 +66,16 @@ function getProductDetails(r) {
 }
 
 console.log("products by price....", filteredProductByPrice), console.log("products by name....", filteredProductByName), 
-console.log("products by category....", filteredProductByCategory), console.log("-------------------------------");
+console.log("products by category....", filteredProductByCategory), console.log("------------------------------------------------------------------------------------------------------------");
 
 const productDetails2 = [ [ "Product 1", 10, 10 ], [ "Product 2", 19, 10 ], [ "Product 3", 100, 5 ], [ "Product 4", 13, 10 ], [ "Product 5", 1, 100 ], [ "Product 6", 45, 5 ], [ "Product 7", 20, 6 ], [ "Product 8", 16, 6 ], [ "Product 9", 65, 5 ], [ "Product 10", 15, 1 ] ], totalCalc = getProductDetails(productDetails2);
 
-console.log("total calculation..", totalCalc), console.log("-------------------------------");
+function calculatesSum(r) {
+    return r.filter((r => r % 2 == 0)).reduce(((r, o) => r + o), 0);
+}
+
+console.log("total calculation..", totalCalc), console.log("------------------------------------------------------------------------------------------------------------");
+
+const numbersOfArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], totalSum = calculatesSum(numbersOfArray);
+
+console.log("Sum of even numbers is..", totalSum), console.log("------------------------------------------------------------------------------------------------------------");
