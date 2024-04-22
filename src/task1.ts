@@ -137,3 +137,36 @@ console.log('Sum of even numbers is..', totalSum);
 console.log(
   '------------------------------------------------------------------------------------------------------------'
 );
+
+// 6. Create an interface called Person that includes properties for name (string), age (number), and email (string). Then create an array of Person objects and write a function that takes the array and a string email as parameters, and returns the Person object that matches the email or null if no match is found.
+
+interface Person {
+  name: string;
+  age: number;
+  email: string;
+}
+
+function findPerson(arr: Person[], mail: string): Person | null {
+  const result = arr.find((p) => p.email === mail);
+
+  return result || null;
+}
+
+const persons: Person[] = [
+  { name: 'Jiku', age: 25, email: 'jika@gmail.com' },
+  { name: 'Munira', age: 25, email: 'munira@gmail.com' },
+  { name: 'MAHJIKU', age: 25, email: 'muhammadjiku364@gmail.com' },
+  { name: 'Munira', age: 25, email: 'munira@gmailinctg.com' },
+  { name: 'Irham', age: 2, email: 'irham@gmail.com' },
+];
+
+const checkPerson1 = findPerson(persons, 'jika@gmail.com');
+const checkPerson2 = findPerson(persons, 'muhammadjiku64@gmail.com');
+const checkPerson3 = findPerson(persons, 'muhammadjiku364@gmail.com');
+console.log(checkPerson1);
+console.log(checkPerson2);
+console.log(checkPerson3);
+
+console.log(
+  '------------------------------------------------------------------------------------------------------------'
+);
