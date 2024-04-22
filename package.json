@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/task1.js",
+    "start-dev": "ts-node-dev --respawn --transpile-only task1.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "muhammad-jiku",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "ts-node-dev": "^2.0.0"
   }
 }
