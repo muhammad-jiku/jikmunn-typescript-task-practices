@@ -38,3 +38,45 @@ console.log('array 2 is..', arr2);
 console.log('array 3 is..', arr3);
 
 console.log('-------------------------------');
+
+// 3. You have an interface for Product, containing the product's id, name, price, and category. You want to filter an array of Products based on a specific criterion and value.
+
+// Write a TypeScript generic function that takes this array, a criterion , and returns a new array containing only the products that match the given criterion and value. Use a generic type parameter in the function signature to ensure type safety.
+
+interface Product {
+  id: number;
+  name?: string;
+  price: number;
+  category: string;
+}
+
+function getProductData<T>(
+  arr: T[],
+  criterion: keyof T,
+  value: T[keyof T]
+): T[] {
+  return arr.filter((x) => x[criterion] === value);
+}
+
+const productsData: Product[] = [
+  { id: 1, name: 'Product 1', price: 250, category: 'Category D' },
+  { id: 2, name: 'Product 2', price: 646, category: 'Category A' },
+  { id: 3, name: 'Product 3', price: 633, category: 'Category B' },
+  { id: 4, name: 'Product 1', price: 646, category: 'Category C' },
+  { id: 1, name: 'Product 1', price: 10, category: 'Category A' },
+  { id: 2, name: 'Product 2', price: 20, category: 'Category B' },
+  { id: 3, name: 'Product 3', price: 30, category: 'Category A' },
+  { id: 4, name: 'Product 4', price: 40, category: 'Category C' },
+];
+
+const filteredProductByPrice = getProductData(productsData, 'price', 30);
+const filteredProductByName = getProductData(productsData, 'name', 'Product 3');
+const filteredProductByCategory = getProductData(
+  productsData,
+  'category',
+  'Category A'
+);
+console.log('products by price....', filteredProductByPrice);
+console.log('products by name....', filteredProductByName);
+console.log('products by category....', filteredProductByCategory);
+console.log('-------------------------------');

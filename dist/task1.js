@@ -28,3 +28,23 @@ console.log('array 1 is..', arr1);
 console.log('array 2 is..', arr2);
 console.log('array 3 is..', arr3);
 console.log('-------------------------------');
+function getProductData(arr, criterion, value) {
+    return arr.filter((x) => x[criterion] === value);
+}
+const productsData = [
+    { id: 1, name: 'Product 1', price: 250, category: 'Category D' },
+    { id: 2, name: 'Product 2', price: 646, category: 'Category A' },
+    { id: 3, name: 'Product 3', price: 633, category: 'Category B' },
+    { id: 4, name: 'Product 1', price: 646, category: 'Category C' },
+    { id: 1, name: 'Product 1', price: 10, category: 'Category A' },
+    { id: 2, name: 'Product 2', price: 20, category: 'Category B' },
+    { id: 3, name: 'Product 3', price: 30, category: 'Category A' },
+    { id: 4, name: 'Product 4', price: 40, category: 'Category C' },
+];
+const filteredProductByPrice = getProductData(productsData, 'price', 30);
+const filteredProductByName = getProductData(productsData, 'name', 'Product 3');
+const filteredProductByCategory = getProductData(productsData, 'category', 'Category A');
+console.log('products by price....', filteredProductByPrice);
+console.log('products by name....', filteredProductByName);
+console.log('products by category....', filteredProductByCategory);
+console.log('-------------------------------');
