@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only task1.ts",
     "start-dev": "nodemon ./src/task1.js",
+    "serve": "nodemon ./dist/task1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
