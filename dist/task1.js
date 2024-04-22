@@ -106,3 +106,18 @@ const [min, max] = findingMinAndMaxValues(...randomNumbers);
 console.log('Minimum value of the array is....', min);
 console.log('Maximum value of the array is....', max);
 console.log('------------------------------------------------------------------------------------------------------------');
+// 8. Create a TypeScript program that declares a function that takes a string parameter with a literal type of "red", "green", or "blue", and an optional boolean parameter. If the boolean parameter is true, log the string parameter in uppercase. If the boolean parameter is false or not provided, log the string parameter in lowercase.
+const findTextColor = (clr, clrCheck) => {
+    if (clrCheck === true) {
+        const uppercaseColor = clr.toUpperCase();
+        console.log(`${uppercaseColor} is UPPERCASE because it passes the check`);
+    }
+    else {
+        const lowercaseColor = clr.toLowerCase();
+        console.log(`${lowercaseColor} is lowercase because it does not passe the check`);
+    }
+};
+findTextColor('red', false);
+findTextColor('green', true);
+findTextColor('blue');
+console.log('------------------------------------------------------------------------------------------------------------');
