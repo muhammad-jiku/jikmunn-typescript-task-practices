@@ -95,3 +95,14 @@ console.log(checkPerson1);
 console.log(checkPerson2);
 console.log(checkPerson3);
 console.log('------------------------------------------------------------------------------------------------------------');
+// 7. Create a TypeScript program that declares an array of numbers. Use the spread  operator to pass the elements of the array as arguments to a function that finds the minimum and maximum values of the array. Use destructuring to assign the minimum and maximum values to separate variables, and log them to the console.
+function findingMinAndMaxValues(...arr) {
+    const minVal = Math.min(...arr);
+    const maxVal = Math.max(...arr);
+    return [minVal, maxVal];
+}
+const randomNumbers = [485623, 845, 956, 53, 5963, 9563];
+const [min, max] = findingMinAndMaxValues(...randomNumbers);
+console.log('Minimum value of the array is....', min);
+console.log('Maximum value of the array is....', max);
+console.log('------------------------------------------------------------------------------------------------------------');
