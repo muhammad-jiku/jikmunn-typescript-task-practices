@@ -1,5 +1,4 @@
 "use strict";
-//  1. Convert the following JavaScript array into a TypeScript tuple. const userInfo = [101, "Ema", "John",true, , "2023"];
 const userInfo = [
     101,
     'Ema',
@@ -13,9 +12,6 @@ userInfo[0] = 1;
 console.log(userInfo[0]);
 console.log(userInfo);
 console.log('-------------------------------');
-// 2. Write a TypeScript function that takes in two arrays of numbers as parameters. The function should compare the elements in both arrays and return a new array that contains only the elements that are present in both arrays.
-// For example, if the first array is [1, 2, 3, 4, 5] and the second array is [2, 4, 6, 8], the function should return a new array with the elements 2 and 4 because they are present in both arrays.
-// The function should handle arrays of any length and should return the resulting array in the same order as they appear in the first array.
 function filterdArray(a1, a2) {
     const a2Mirror = new Set(a2);
     const newArr = a1.filter((x) => a2Mirror.has(x));
@@ -47,4 +43,23 @@ const filteredProductByCategory = getProductData(productsData, 'category', 'Cate
 console.log('products by price....', filteredProductByPrice);
 console.log('products by name....', filteredProductByName);
 console.log('products by category....', filteredProductByCategory);
+console.log('-------------------------------');
+function getProductDetails(arr) {
+    const result = arr.reduce((total, [, price, quantity]) => total + price * quantity, 0);
+    return result;
+}
+const productDetails2 = [
+    ['Product 1', 10, 10],
+    ['Product 2', 19, 10],
+    ['Product 3', 100, 5],
+    ['Product 4', 13, 10],
+    ['Product 5', 1, 100],
+    ['Product 6', 45, 5],
+    ['Product 7', 20, 6],
+    ['Product 8', 16, 6],
+    ['Product 9', 65, 5],
+    ['Product 10', 15, 1],
+];
+const totalCalc = getProductDetails(productDetails2);
+console.log('total calculation..', totalCalc);
 console.log('-------------------------------');

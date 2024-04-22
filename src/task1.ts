@@ -80,3 +80,32 @@ console.log('products by price....', filteredProductByPrice);
 console.log('products by name....', filteredProductByName);
 console.log('products by category....', filteredProductByCategory);
 console.log('-------------------------------');
+
+// 4. Suppose you have an array of tuples, where each tuple represents a product and contains the product name, price, and quantity. Write a TypeScript function that calculates the total cost of all the products in the array, using a generic type for the tuple and a type alias for the array.
+
+type Product2 = [string, number, number];
+
+function getProductDetails(arr: Product2[]): number {
+  const result = arr.reduce(
+    (total, [, price, quantity]) => total + price * quantity,
+    0
+  );
+
+  return result;
+}
+const productDetails2: Product2[] = [
+  ['Product 1', 10, 10],
+  ['Product 2', 19, 10],
+  ['Product 3', 100, 5],
+  ['Product 4', 13, 10],
+  ['Product 5', 1, 100],
+  ['Product 6', 45, 5],
+  ['Product 7', 20, 6],
+  ['Product 8', 16, 6],
+  ['Product 9', 65, 5],
+  ['Product 10', 15, 1],
+];
+const totalCalc = getProductDetails(productDetails2);
+
+console.log('total calculation..', totalCalc);
+console.log('-------------------------------');
